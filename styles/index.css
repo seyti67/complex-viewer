@@ -1,0 +1,11 @@
+#page-container {
+	display: grid;
+	align-items: center;
+	height: 100vh;
+	padding: 5em;
+}
+
+#graph {
+	max-width: 30em;
+	max-height: 30em;
+}
