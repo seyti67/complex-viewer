@@ -1,3 +1,11 @@
+#main-title {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: .5em;
+	text-decoration: underline;
+}
+
 #page-container {
 	display: grid;
 	align-items: center;

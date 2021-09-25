@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nombres complexes animés</title>
+	<title>Nombres complexes en animation</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/index.css">
 	<script src="js/plotly-2.4.2.min.js"></script>
@@ -14,15 +14,16 @@
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
+	<h1 id="main-title">Nombres complexes en animation</h1>
 	<div id="page-container">
 		<div id="graph"></div>
 		<div id="config">
 			<div id="control-button" onclick="toggleAnimation()"></div>
-			<h3>Valeurs</h3>
+			<h3>Valeurs :</h3>
 			<p>x = <input type="number" id="x-value" value="0" oninput="xValue = Number(this.value);render(compute(xValue));"></p>
 			<p>z = <span id="z-value">0</span></p>
 			<br><br>
-			<h3>Paramètres</h3>
+			<h3>Paramètres :</h3>
 			<form onchange="update_settings()">
 				\(\Delta_{x}\cdot s^{-1}\)<br>
 				<input type="range" min="-100" max="100" value="1" oninput="this.nextElementSibling.value = this.value;"/>
@@ -30,6 +31,7 @@
 				
 				<br><br>
 				\(z=\) <input type="text" value="e.pow(0,x)" id="func-string" style="width: 90%;" />
+				<br><i class="small"><a href="https://github.com/infusion/Complex.js" target="_blank">Comment créer une fonction</a></i>
 			</form>
 			<br><br>
 			<h3>Exemples :</h3>
