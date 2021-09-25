@@ -4,19 +4,30 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Nombres complexes</title>
+	<title>Nombres complexes animés</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/index.css">
 	<script src="js/plotly-2.4.2.min.js"></script>
 	<script src="js/complex.min.js"></script>
 	<script src="js/graph.js" async></script>
 	<script src="js/main.js" async></script>
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
 </head>
 <body>
 	<div id="page-container">
 		<div id="graph"></div>
 		<div id="config">
 			<div id="control-button" onclick="toggleAnimation()"></div>
+			<p>x = <input type="number" id="x-value" value="0" oninput="xValue = Number(this.value);render(compute(xValue));"></p>
+			<p>z = <span id="z-value">0</span></p>
+			<form onchange="update_settings()">
+				\(\Delta_{x}\cdot s^{-1}\)<br>
+				<input type="range" min="-100" max="100" value="1" oninput="this.nextElementSibling.value = this.value;"/>
+				<input id="variation" type="number" min="-100" max="100" value="1" oninput="this.previousElementSibling.value = this.value;"/>
+				
+				<br><br>
+				\(z=\) <input type="text" value="e.pow(0,x)" id="func-string" style="width: 90%;" />
+			</form>
 		</div>
 	</div>
 </body>

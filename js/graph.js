@@ -1,18 +1,24 @@
-TESTER = document.getElementById('graph');
+graph = document.getElementById('graph');
 
 let pointPositions = {x: 0, y: 0};
-const min = -1;
-const max = 1;
+const min = -2;
+const max = 2;
 Plotly.newPlot(
-	TESTER, [{
-		x: [pointPositions.x],
-		y: [pointPositions.y],
+	graph, [{
+		mode: 'markers',
 		marker: { color: "#ad3232", size: 10 }
 	}],
 	{
+		title: { text: 'z = a + ib' },
 		margin: { r: 50, t: 50, b: 50, l: 50 },
-		xaxis: {range: [min, max]},
-      	yaxis: {range: [min, max]}
+		xaxis: {
+			title: { text: 'a' },
+			range: [min, max]
+		},
+      	yaxis: {
+			title: { text: 'b' },
+			range: [min, max]
+		}
 	},
 	{
 		scrollZoom: true,
@@ -28,6 +34,9 @@ function update_point() {
 		}],
 		layout: {}
 	}, {
+		transition: {
+			duration: 0
+		},
 		frame: {
 			duration: 0,
 			redraw: false
@@ -35,15 +44,14 @@ function update_point() {
 	});
 }
 function move_point(args) {
-	if(typeof args.x === 'number' && typeof args.y === 'number') {
-		pointPositions = args;
-	} else if (typeof args.dx === 'number' && typeof args.dy === 'number') {
-		pointPositions.x += args.dx;
-		pointPositions.y += args.dy;
-	}
+	pointPositions = args;
 	update_point();
 }
 
+const xSpan = document.getElementById('x-value');
+const zSpan = document.getElementById('z-value');
 function render(cNumber) {
-	move_point({x:cNumber.re, y:cNumber.im});
+	xSpan.value = Math.round(xValue*100)/100;
+	zSpan.innerHTML = (Math.round(cNumber.re*100)/100).toString()+"+"+(Math.round(cNumber.im*100)/100).toString()+"i"
+	move_point({x:Number(cNumber.re)||0, y:Number(cNumber.im)||0});
 }
