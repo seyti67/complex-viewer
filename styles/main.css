@@ -110,8 +110,8 @@ input[type="text"], input[type="number"] {
 	padding: 1em;
 	border: none;
 	border-radius: .2em;
-	margin: 0 .5em;
-	width: 10em;
+	margin: .2em .5em;
+	width: 7em;
 	color: #fff;
 	background-color: #444040;
 	box-shadow: inset .15em .15em .5em #353232, inset -.15em -.15em .5em #534e4e;
@@ -121,4 +121,10 @@ input[type="text"], input[type="number"] {
 
 input[type="text"]:focus, input[type="number"]:focus {
 	box-shadow: inset .30em .30em .5em #353232, inset -.30em -.30em .5em #534e4e;
+}
+
+select {
+	background-color: #444040;
+	color: #fff;
+	padding: 0.5em;
 }

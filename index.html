@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,8 +18,11 @@
 		<div id="graph"></div>
 		<div id="config">
 			<div id="control-button" onclick="toggleAnimation()"></div>
+			<h3>Valeurs</h3>
 			<p>x = <input type="number" id="x-value" value="0" oninput="xValue = Number(this.value);render(compute(xValue));"></p>
 			<p>z = <span id="z-value">0</span></p>
+			<br><br>
+			<h3>Paramètres</h3>
 			<form onchange="update_settings()">
 				\(\Delta_{x}\cdot s^{-1}\)<br>
 				<input type="range" min="-100" max="100" value="1" oninput="this.nextElementSibling.value = this.value;"/>
@@ -28,6 +31,12 @@
 				<br><br>
 				\(z=\) <input type="text" value="e.pow(0,x)" id="func-string" style="width: 90%;" />
 			</form>
+			<br><br>
+			<h3>Exemples :</h3>
+			<select id="example-list" onclick="change_example(this.value);"></select>
+			<div id="latex" style="text-align:center;padding: .5em;">
+				\(z = e^{ix}\)
+			</div>
 		</div>
 	</div>
 </body>
