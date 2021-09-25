@@ -7,7 +7,7 @@ examples = [
 	{
 		name: 'exp(iπx/2)',
 		func: 'e.pow(0,pi*x/2)',
-		latex: 'e^{ix}'
+		latex: 'e^{i\\pi x\\div 2}'
 	},
 	{
 		name: 'i^x',
@@ -63,11 +63,13 @@ function toggleAnimation() {
 	paused = !paused;
 	if(paused) {
 		ctrlbtn.className = "";
+		ctrlbtn.title = "Démarrer";
 		lastPause = new Date().getTime();
 	} else {
 		let afkTimestamp = new Date().getTime() - lastPause;
 		xValue -= afkTimestamp*variation;
 
+		ctrlbtn.title = "Arrêter";
 		ctrlbtn.className = "playing";
 		requestAnimationFrame(animate);
 	}
