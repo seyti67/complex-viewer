@@ -26,15 +26,10 @@ function update_point() {
 			y: [pointPositions.x],
 			x : [pointPositions.y]
 		}],
-		traces: [0],
 		layout: {}
 	}, {
-		transition: {
-			duration: 100,
-			easing: 'linear'
-		},
 		frame: {
-			duration: 100,
+			duration: 0,
 			redraw: false
 		}
 	});
@@ -47,4 +42,8 @@ function move_point(args) {
 		pointPositions.y += args.dy;
 	}
 	update_point();
+}
+
+function render(cNumber) {
+	move_point({x:cNumber.re, y:cNumber.im});
 }
