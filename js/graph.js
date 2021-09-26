@@ -29,8 +29,8 @@ Plotly.newPlot(
 function update_point() {
 	Plotly.animate('graph', {
 		data: [{
-			y: [pointPositions.x],
-			x : [pointPositions.y]
+			x : [pointPositions.x],
+			y: [pointPositions.y]
 		}],
 		layout: {}
 	}, {
