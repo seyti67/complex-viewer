@@ -1,23 +1,23 @@
 examples = [
 	{
-		name: 'exp(ix)',
+		name: 'exp(iθ)',
 		func: 'e.pow(0,x)',
-		latex: 'e^{ix}'
+		latex: 'e^{i\\theta}'
 	},
 	{
 		name: 'exp(iπx/2)',
 		func: 'e.pow(0,pi*x/2)',
-		latex: 'e^{i\\pi x\\div 2}'
+		latex: 'e^{i\\pi \\theta\\div 2}'
 	},
 	{
-		name: 'i^x',
+		name: 'i^θ',
 		func: 'i.pow(x)',
-		latex: 'i^x'
+		latex: 'i^\\theta'
 	},
 	{
-		name: 'Re(exp(ix))² + Im(exp(ix))²',
+		name: 'Re(exp(iθ))² + Im(exp(iθ))²',
 		func: 'new Complex(Math.pow(Re(e.pow(0,x)),2)+Math.pow(Im(e.pow(0,x)),2))',
-		latex: 'Re(e^{ix})^2 + Im(e^{ix})^2'
+		latex: 'Re(e^{i\\theta})^2 + Im(e^{i\\theta})^2'
 	}
 ]
 let examplesStr = '';
